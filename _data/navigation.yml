@@ -1,0 +1,15 @@
+# Top menu. Order here is the order shown on the site.
+- title: Home
+  url: /
+- title: About
+  url: /about.html
+- title: Research
+  url: /research.html
+- title: Personnel
+  url: /personnel.html
+- title: Publications
+  url: /publications.html
+- title: Photo Gallery
+  url: /photo-gallery.html
+- title: Data Availability
+  url: /data-availability.html

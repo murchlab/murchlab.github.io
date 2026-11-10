@@ -1,0 +1,9 @@
+title: "Murch Research Group: Cryogenic Quantum Electronics"
+url: "https://murchlab.github.io"
+baseurl: ""
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

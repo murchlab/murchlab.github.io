@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }} - {{ page.title }}</title>
+<link href="{{ '/CSS/group.css' | relative_url }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <img src="{{ '/Images/widesketchlabheader.png' | relative_url }}" id="asLogo940" usemap="#m_asLogo940" alt="Murch Lab" width="960">
+    <map name="m_asLogo940" id="m_asLogo940">
+      <area shape="rect" coords="247,0,427,28" href="http://wustl.edu" target="_blank" alt="">
+      <area shape="rect" coords="52,0,213,28" href="http://artsci.wustl.edu" target="_blank" alt="">
+    </map>
+
+    <div id="navigationMenu">
+      <ul>
+{%- for item in site.data.navigation %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor -%}
+      </ul>
+    </div>
+  </div>
+
+  <div class="content">
+<!-- THE PAGE CONTENTS STARTS HERE -->
+{{ content }}
+<!-- THE PAGE CONTENTS ENDS HERE -->
+<br>
+  </div>
+
+  <div class="footer"><p><hr> <a href="http://physics.wustl.edu" target="_blank">Physics</a> | <a href="http://artsci.wustl.edu" target="_blank">Arts&amp;Sciences</a> | <a href="http://www.wustl.edu" target="_blank">Washington University in St. Louis</a> | Campus Box 1105, One Brookings Drive, St. Louis, MO 63130</p></div>
+</div>
+</body>
+</html>
