@@ -1,0 +1,171 @@
+# Lab roster for the Personnel page (personnel.html).
+#
+# Each section below is a list of people, shown on the page in this order.
+# To add someone, copy an existing entry and change it.
+# To remove someone, delete their entry.
+# To move someone (for example, a student who graduated), cut their entry
+# and paste it into another section.
+#
+# Fields:
+#   name:   shown as the heading of the person's box
+#   photo:  path to the photo, e.g. People/smith.jpg (leave out if none yet)
+#   width, height: optional photo size in pixels (default 300 x 300)
+#   bio:    the text under the name. HTML is allowed (links, <br>, etc.).
+#           Keep the "|" after bio: and indent every line of the text.
+
+pi:
+  - name: Prof. Kater Murch
+    photo: People/portrait_large/murch_kater.jpg
+    bio: |
+      <dl>
+        <dt>Education</dt>
+        <dd>2008 Ph.D., University of California, Berkeley</dd>
+        <dd>2007 MA, University of California, Berkeley</dd>
+        <dd>1998 BA, Reed College</dd>
+      </dl>
+      <br>
+      <dl>
+        <dt>Professional History</dt>
+        <dd> 2026-present, Professor, University of California, Berkeley</dd>
+        <dd>2018-present Associate Professor, Washington University</dd>
+        <dd>2014-2018 Assistant Professor, Washington University</dd>
+        <dd>2008-2013 Postdoctoral Scholar, University of California, Berkeley</dd>
+      </dl>
+      <br>
+      <dl>
+        <dd>Kater received his B.A. in physics from Reed College in 2002. After that, he spent a long year slacking off, working as a bee keeper, honing his guitar skills, and studying the cello before finally starting his Ph.D. work at UC Berkeley with Prof. Dan Stamper-Kurn. After some time studying Bose-Einstein condensation in multiply connected geometries, Kater focused his interests on general problems in quantum measurement, and performed some of the first studies of position measurement quantum backaction. After receiving his Ph.D. in 2008, Kater continued work in the Stamper-Kurn group studying a possible super-solid phase of matter which occurs in spinor-Bose-Einsten condensates, and constructing a state of the art BEC apparatus. After a short postdoc in the Stamper-Kurn Group, Kater joined Irfan Siddiqi's group to study superconducting quantum circuits, where he continued to study basic questions in quantum measurement and quantum noise. In 2014 Kater joined the faculty at Washington University. In 2015 Kater received the Alfred P. Sloan Fellowship in Physics. Kater received the St. Louis Academy of Science Innovation Award in 2017. In 2018, Kater received the Cottrell Scholar Award and an NSF CAREER Award.
+        <br>
+        <br>
+        <a href="https://web.archive.org/web/20151002045518/http://artsci.wustl.edu/articles/2014/wine-quantum-mechanics-and-nature-time"><strong>An interview with Kater: Wine, Quantum Mechanics and the Nature of Time</strong></a>
+        <br>
+        <a href="https://web.archive.org/web/20240909180358/https://www.reed.edu/reed_magazine/june2015/articles/features/KaterMurch/murch.html"><strong>Cheating Heisenberg: Feature in Reed Magazine</strong></a>
+        <br>
+        <br>
+        <a href="mailto:katermurch@berkeley.edu">katermurch@berkeley.edu</a>
+        </dd>
+      </dl>
+
+postdocs:
+  - name: Kaiwen Zheng
+    photo: People/KZ_060422.jpg
+    bio: |
+      I admire Heike Kamerlingh Onnes’ way of science as he was able to focus on a simple yet important challenge of reaching lower and lower temperatures. He created the field of low temperature physics and discovered superconductivity as a result. I aspire to become a scientist as awesome as him. Like Onnes, my research also focuses on a challenge simple but important which is to mitigate quantum decoherence. If this problem is solved, people will enjoy the benefit of quantum technologies and, if we're a bit romantic, see quantum effect of macroscopic objects with their own naked eyes! I don’t think I am a materials scientist, a quantum engineer, or a condensed matter physicist, although I do apply their techniques when tackling different aspects of decoherence. I’m a guy who loves spending time in the lab with his equipment, who’s on his way of becoming a great scientist.
+      <br>
+      <br>
+      Ph.D., Physics, Washington University in St. Louis
+      <br>
+      M.S.E., Materials Science, University of Florida
+      <br>
+      B.S., Materials Science, Arizona State University
+      <br>
+      <br>
+      <a href="https://scholar.google.com/citations?hl=en&user=bE5SUKUAAAAJ&inst=2230987035966559800"><strong>Google Scholar</strong></a>
+      &emsp;
+      <a href="https://www.linkedin.com/in/kaiwen-zheng-259913105/"><strong>LinkedIn</strong></a>
+
+
+grad_students:
+  - name: Sean Borjigin
+
+  - name: Qian Cao
+
+  - name: Xiaoya Chen
+
+  - name: Sidharth Duthaluru
+
+  - name: Aidan Jacobson
+
+  - name: Orion Lee
+    photo: People/orion.jpg
+    bio: |
+      I did my undergrad in physics at Reed College, where I worked on condensed matter simulations of integer quantum Hall transitions.
+      I was then a postbac researcher at Los Alamos National Laboratory, working on verification and validation of numerical codes for hydrodynamics.
+      My current research spans non-Hermitian physics, control of quantum many-body systems, and measurement-induced dynamics. I also work on quantum amplifiers for dark matter detection.
+      Outside of research, I enjoy running, cycling, and photography.
+
+  - name: Alexandria Udenkwo
+    photo: People/Alex.jpg
+    bio: |
+      I earned my Physics B.S. at the University of Maryland, Baltimore County. At UMBC, I worked as an undergraduate researcher in the Quantum Thermodynamics lab where I did theory work with quantum speed limits and transitionless quantum driving. Currently in the Murch lab, I am exploring experimental approaches to studying counter-adiabatic control of two coupled transmon qubits. My interests are in open quantum systems, quantum many body physics and nanofabrication.
+
+undergrad_students:
+  - name: Emily Bell
+former_postdocs:
+  - name: Pratik Barge
+    photo: People/DP_grouppage.jpg
+    bio: |
+      I earned my PhD in theoretical quantum optics from Louisiana State University in the summer of 2024, where I worked on imaging and sensing with quantum states of light, open quantum systems, and quantum networks. I joined the Murch lab in Fall 2024, making a twofold transition: from theoretical to experimental research and from optical qubits to superconducting qubits. I am currently focusing on studies of dissipation engineering and non-Hermitian quantum systems using superconducting transmon qubits. I come from Maharashtra, India where I earned my bachelor’s degree in mechanical engineering, worked in the engineering industry for some time before returning to academia for a master’s degree in physics. I am a cinephile with love for non-mainstream, international films. I love reading fiction, playing racquetball and chess during my free time.
+
+  - name: Weijian Chen
+    photo: People/portrait_large/chen.jpg
+    bio: |
+      I received my B.Sc. in optical information science & technology from University of Science and Technology of China in 2012. Then I received my M. S. and Ph.D. in electrical engineering from Washington University in St. Louis in 2015 and 2018, respectively. My PhD research focused on photonic resonators and their applications in laser, optical sensing, and non-Hermitian physics. Currently, I am working on superconducting circuits/qubits and quantum sensing. In my free time, I like hiking, reading, and cooking with family.
+
+  - name: Xiayu Linpeng
+    photo: People/portrait_large/linpeng.jpg
+    bio: |
+      I received my B.S. degree at Zhejiang University in 2014, where I studied quantum measurements on superconducting phase qubits coupled with a microwave resonator. Then I got my Ph.D. at the University of Washington in 2020, where I worked on spin control and coherence measurements for dopant qubits in direct bandgap semiconductors. Currently, I’m doing research on quantum thermodynamics in superconducting circuits at Murch group.
+
+  - name: Neda Forouzani
+    photo: People/ForouzaniNeda184x218.jpg
+    width: 184
+    height: 218
+    bio: |
+      Neda was a postdoc in the group from 2014-2016 at LPS Maryland.
+
+  - name: Dian Tan
+    photo: People/tanDian218x184.png
+    width: 184
+    height: 218
+    bio: |
+      Dian graduated from the University of Science and Technology of China, Hefei, Anhui, P. R. China in 2012. Later that year, Dian came to Washington University for graduate studies in physics and researched weak values and continuous quantum measurement with post-selection. Dian graduated with his PhD in 2017 and continued as a post-doc with the Murch lab into 2018.
+
+former_grad_students:
+  - name: Xingrui Song
+    photo: People/portrait_large/song.jpg
+    bio: |
+      I am from Zhejiang province, China. I graduated from the School of the Gifted Young (SCGY) of University of Science and Technology of China (USTC) with a B.Sc. degree in Atomic & Molecular Physics. During my undergraduate years, I studied PT-symmetric Hamiltonians in CAS Key Laboratory of Microscale Magnetic Resonance. I spent my summer of 2017 at Texas A&M University numerically investigating partial differential equations derived from a newly proposed gravity theory. Quantum mechanics is amazing. I am interested in almost every aspect of quantum mechanics, from quantum information to quantum gravity, because I believe they are mutually connected. In the Murch lab, I am currently working on a project in quantum thermodynamics. I am also interested in the promising technologies of quantum computation as well as artificial intelligence.
+
+  - name: Chandrashekhar Gaikwad
+    photo: People/Chandrashekhar.jpg
+    bio: |
+      Hello! I come from an electrical engineering background but my curiosity in exploring quantum mechanics drove me to study physics as a career. I did my master's in physics at IIT Bombay, India. After which I've joined Murch's group as a graduate student in 2019. I am currently working on realizing non-Hermitian quantum systems and observe their behavior near exceptional points. I am also a part of the WUSTL's ADMX group, where I am responsible for designing and testing 2-4GHz Flux Pump JPAs. In my free time, I like to do some photography and Random walks.
+
+  - name: Serra Erdamar
+    photo: People/SerraErdamar.jpg
+    height: 455
+    bio: |
+      I received my B.S. in systems and electrical engineering with a minor in astrophysics and astroparticle physics and my M.S. in electrical engineering from Washington University. During these years I studied theoretical derivations of photon transport in a two-mode waveguide. Currently I am working on exploring quantum thermodynamics in non-Hermitian systems. I am interested in exploring entanglement within systems using quantum probes and weak measurement. I am also interested in applying machine learning methods to find patterns we can’t see and to make quantum measurement more useful. My hobbies include playing and listening to romantic era piano arrangements and reading historical fiction.
+
+  - name: Yunzhao Wang
+    photo: People/portrait_large/wang.jpg
+    bio: |
+      I came from Shandong province, China, where people are famous for their favor of scallions. I received my B.S. in physics in Tsinghua Univ., Beijing and did some optomechanics on chip during my undergraduate years. Currently in Murch lab I am looking for protocols and gates for multi-qubit and multi-qutrit systems, as well as trying to be a regular customer in the cleanroom. In my leisure time, I got a wide range of interest in science, since it feels subtle to see how models vary among people trying to get a grip on a different piece of the world. I love rock & roll.
+
+  - name: Daria Kowsari
+    photo: People/portrait_large/kowsari.jpg
+    bio: |
+      Hey There! I graduated from K. N. Toosi University of Technology in Tehran, Iran with a B.Sc. in solid state physics. During my undergrad, I mainly focused on medical physics and, particularly, radiation therapy using gamma rays. Then I tried to have a little of change and expand my knowledge. So, I decided to pursue my education at WashU to explore quantum mechanics in Kater's lab. Right now my research pertains to exploring non-Markovian quantum processes, reconstructing the memory kernel of open quantum system dynamics, and finding meaningful definitions of heat and work along quantum trajectories. What's more, I'm trying to find a way to connect machine learning techniques to my research. Putting physics aside, I've got a knack for video games, swimming, cooking and whenever I get time, I read philosophy books and listen to heavy metal music.
+
+  - name: Maryam Abbasi
+    photo: People/portrait_large/abbasi.jpg
+    bio: |
+      I did my undergrad and master in physics at Ferdowsi University of Mashhad, Iran. My master's degree was focused on Ads/CFT correspondence, more specifically on holographic entanglement entropy. I joined Murch lab in the summer of 2018. Currently, I am working on non-hermitian systems and also exploring potential setups for designing a "giant atom" in a circuit QED setup.
+
+  - name: Mahdi Naghiloo
+    photo: People/naghiloo/naghiloo_0.jpg
+    bio: |
+      I got my B.Sc. in solid state physics from the University of Zanjan (ZNU) near my hometown Hidaj. For my master degree, I studied quantum optics at Sharif University of Technology (SUT), Tehran, Iran. I moved to the US in 2013 to start my Ph.D. study in Murch Lab, Washington University. Here I got my hands dirty with several experiments on quantum physics with superconducting circuits, exploring fundamental *problems* in the quantum world. I mostly focus on measurement dynamics, quantum thermodynamics, and aspects of metrology with quantum circuits. Our main tool for these studies is a technique called "weak measurement" by which we can continuously monitor the evolution of a single qubit without collapsing the quantum wavefunction.
+
+  - name: Patrick Harrington
+    photo: People/portrait_large/harrington.jpg
+    bio: |
+      After completing my B.Sc. in Physics at Gordon College and researching laser spectroscopy with Thermo Fisher Scientific for a year, I joined the Murch group here at Washington University as a graduate student. Throughout my PhD, I have focused on open quantum systems with experiments on superconducting circuits. I look to explore the physics of open quantum systems, by addressing driven and dissipative interactions between quantum circuits and their electromagnetic environment. I also enjoy long treks, making music, and general banter.
+      <br>
+      <br>
+      Personal webpage: <a href="https://web.archive.org/web/20220701083443/https://web.physics.wustl.edu/pharrington/"><strong>https://web.physics.wustl.edu/pharrington</strong></a>
+
+  - name: Jonathan Monroe
+    photo: People/portrait_large/monroe.jpg
+    bio: |
+      Howdy! I graduated from Texas A&M University where I did a little bit of everything that I could. I graduated with a B.Sc. in physics, a B.A. math, and minors in computer science and astrophysics. My main research at the time was investigating how galactic environments changed the way galaxies grow. Now in the Murch Lab I'm doing something a bit different by studying how concepts from thermodynamics extend to the quantum regime. I ultimately aim to develop better quantum computing protocols through a thorough understanding of quantum measurement. When I'm not in the lab I love playing ultimate frisbee, facing the outdoors, and talking philosophy.

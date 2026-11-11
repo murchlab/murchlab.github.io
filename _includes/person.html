@@ -1,0 +1,17 @@
+{%- comment -%} One person's box on the Personnel page. Data comes from _data/people.yml. {%- endcomment -%}
+<table class="personnel">
+	<tr class="personnelHeader">
+		<td class="img" rowspan="3">
+			{%- if include.person.photo %}
+			<img src="{{ '/' | append: include.person.photo | relative_url }}" alt="{{ include.person.name }}" width="{{ include.person.width | default: 300 }}" height="{{ include.person.height | default: 300 }}">
+			{%- endif %}
+		</td>
+		<td><p style="font-size:20px">{{ include.person.name }}</p></td>
+	</tr>
+	<tr class="personnelContent">
+		<td>
+{{ include.person.bio }}
+		</td>
+	</tr>
+	<tr class="personnelFooter"><td></td></tr>
+</table>
