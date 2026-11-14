@@ -48,7 +48,7 @@ postdocs:
   - name: Kaiwen Zheng
     photo: People/KZ_060422.jpg
     bio: |
-      I admire Heike Kamerlingh Onnes’ way of science as he was able to focus on a simple yet important challenge of reaching lower and lower temperatures. He created the field of low temperature physics and discovered superconductivity as a result. I aspire to become a scientist as awesome as him. Like Onnes, my research also focuses on a challenge simple but important which is to mitigate quantum decoherence. If this problem is solved, people will enjoy the benefit of quantum technologies and, if we're a bit romantic, see quantum effect of macroscopic objects with their own naked eyes! I don’t think I am a materials scientist, a quantum engineer, or a condensed matter physicist, although I do apply their techniques when tackling different aspects of decoherence. I’m a guy who loves spending time in the lab with his equipment, who’s on his way of becoming a great scientist.
+      I am fascinated by the mystery of superconductivity (I am a die-hard fan of Heike Kamerlingh Onnes) and the miraculous accomplishments of modern nanofabrication (not too different from enchanting crystals with magical power). I express these interests by investigating how to improve the coherence properties of quantum devices. During my PhD, I studied a novel hybrid quantum system based on electrons on the surface of solid neon coated on top of superconducting circuits. Recently, I have been diverting my energy toward investigating unconventional and high-temperature superconductors using the microwave and device techniques I acquired during my PhD. I hope that my efforts will play a small part in helping restore the golden era of experimental cryogenic research.
       <br>
       <br>
       Ph.D., Physics, Washington University in St. Louis
@@ -65,12 +65,21 @@ postdocs:
 
 grad_students:
   - name: Sean Borjigin
+    photo: People/sean.jpg
+    bio: |
+      I received dual B.S. degrees in Physics and Mathematics from the University of Texas at Dallas in 2024 and an M.A. in Physics from Washington University in St. Louis in 2026. During my time at WashU, I conducted research in the Murch group, focusing on quantum sensing and quantum metrology using superconducting circuits. I am currently pursuing a Ph.D. in EECS at UC Berkeley, where I continue my research in quantum sensing in the Murch group. Outside of research, I enjoy a wide variety of sports and outdoor activities.
 
   - name: Qian Cao
+    photo: People/qian.png
+    bio: |
+      I am from Shanghai, China. I received my B.S. in Physics from Wuhan University and my M.A. in Physics from Washington University in St. Louis. Since joining the Murch Lab in 2024, I have worked on a broad range of topics in quantum information science, including non-Hermitian physics, open quantum systems, quantum sensing, and quantum many-body physics. My current research focuses on real-time quantum feedback and control and their connections to quantum many-body and condensed matter physics. I am also interested in exploring state-of-the-art quantum computing techniques and am excited about the possibility of implementing them on our experimental platform.
 
   - name: Xiaoya Chen
 
   - name: Sidharth Duthaluru
+    photo: People/siddu-square-1536.jpg
+    bio: |
+      I did my undergrad in physics at UC Berkeley, working on instrumentation and control for high-frequency experiments. After a fun intermission in St. Louis developing high-Tc superconducting sensors for characterizing novel electron-on-neon qubit systems, I am back in Berkeley pursuing my PhD in EECS. My research interests focus on microwave techniques, high Tc superconductors, optically controlled superconducting circuits, and quantum devices.
 
   - name: Aidan Jacobsen
 
@@ -89,6 +98,9 @@ grad_students:
 
 undergrad_students:
   - name: Emily Bell
+    photo: People/emily.jpg
+    bio: |
+      I'm a senior at UC Berkeley double majoring in Physics and Applied Mathematics. In the Murch Lab, I study quantum cellular automata, where simple local rules produce surprisingly rich dynamics, and I’m investigating whether those dynamics can help preserve quantum information. I love working with quantum hardware, both because the devices themselves are fascinating and because they open up new ways to explore fundamental physics. I've also recently started working on other hands-on projects in the lab. Outside of lab, I enjoy running, cycling, and pretty much any excuse to spend time outdoors.
 former_postdocs:
   - name: Pratik Barge
     photo: People/DP_grouppage.jpg
@@ -168,3 +180,9 @@ former_grad_students:
     photo: People/portrait_large/monroe.jpg
     bio: |
       Howdy! I graduated from Texas A&M University where I did a little bit of everything that I could. I graduated with a B.Sc. in physics, a B.A. math, and minors in computer science and astrophysics. My main research at the time was investigating how galactic environments changed the way galaxies grow. Now in the Murch Lab I'm doing something a bit different by studying how concepts from thermodynamics extend to the quantum regime. I ultimately aim to develop better quantum computing protocols through a thorough understanding of quantum measurement. When I'm not in the lab I love playing ultimate frisbee, facing the outdoors, and talking philosophy.
+
+former_undergrad_students:
+  - name: Bruce Shen
+    photo: People/bruce.png
+    bio: |
+      I’m an undergraduate researcher at WashU, working on superconducting microwave resonators and NV-center sensing. I’m broadly interested in quantum computing, quantum sensing, and developing new experimental tools for quantum technologies. Outside of research, I enjoy exploring new places, playing sports, and photography.
