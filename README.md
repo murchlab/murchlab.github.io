@@ -48,6 +48,7 @@ The Personnel page ([personnel.html](personnel.html)) only sets the layout. The 
 | `undergrad_students` | Undergraduate students |
 | `former_postdocs` | Former post-docs |
 | `former_grad_students` | Former graduate students |
+| `former_undergrad_students` | Former undergrad students |
 
 - **Add someone:** copy an existing entry into the right section and edit it.
 - **Remove someone:** delete their entry.
