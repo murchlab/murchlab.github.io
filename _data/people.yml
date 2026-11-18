@@ -75,6 +75,9 @@ grad_students:
       I am from Shanghai, China. I received my B.S. in Physics from Wuhan University and my M.A. in Physics from Washington University in St. Louis. Since joining the Murch Lab in 2024, I have worked on a broad range of topics in quantum information science, including non-Hermitian physics, open quantum systems, quantum sensing, and quantum many-body physics. My current research focuses on real-time quantum feedback and control and their connections to quantum many-body and condensed matter physics. I am also interested in exploring state-of-the-art quantum computing techniques and am excited about the possibility of implementing them on our experimental platform.
 
   - name: Xiaoya Chen
+    photo: People/xiaoya.jpg
+    bio: |
+      I did my undergraduate degree in Electrical Engineering at UCLA. My undergraduate research was in the semiconductor industry, with a focus on Back-End-of-Line (BEOL) power electronics. During my PhD at UC Berkeley, I decided to shift my focus to superconducting qubits because of the fascinating physics behind them and the enormous potential of the field. My current research focuses on measurement-driven quantum algorithms and quantum many-body physics. Outside the lab, I love traveling, surfing, and scuba diving. I'm also currently learning freediving, snowboarding, and tennis. There are just so many things in the world waiting for me to try!
 
   - name: Sidharth Duthaluru
     photo: People/siddu-square-1536.jpg
@@ -82,6 +85,9 @@ grad_students:
       I did my undergrad in physics at UC Berkeley, working on instrumentation and control for high-frequency experiments. After a fun intermission in St. Louis developing high-Tc superconducting sensors for characterizing novel electron-on-neon qubit systems, I am back in Berkeley pursuing my PhD in EECS. My research interests focus on microwave techniques, high Tc superconductors, optically controlled superconducting circuits, and quantum devices.
 
   - name: Aidan Jacobsen
+    photo: People/aidan.jpg
+    bio: |
+      Aidan earned his B.S. in in electrical engineering from Purdue University while experimentally looking for signatures of topological superconductivity. He has a deep passion for superconducting circuits and how to understand and work with the noise limits of real devices. His current research interests also include scalable interconnect technologies. Outside of the lab, Aidan loves to bike, trail run, and race triathlons. Its impossible to live in a place like Berkeley and not enjoy the hills.
 
   - name: Orion Lee
     photo: People/orion.jpg
