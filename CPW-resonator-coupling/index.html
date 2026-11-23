@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://smm.misis.ru/CPW-resonator-coupling/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>
+		Quality factor of a transmission line coupled coplanar waveguide resonator
+	</title>
+	<style type="text/css">
+	.ground-conductor {
+		stroke:#000000;
+	}
+	.A-conductor {
+		stroke:#004874;
+	}
+	.B-conductor {
+		stroke:#FFA000;
+	}
+	.ground-conductor-text {
+		color:#000000;
+		font-weight: bold;
+	}
+	.A-conductor-text {
+		color:#004874;
+		font-weight: bold;
+	}
+	.B-conductor-text {
+		color:#FFA000;
+		font-weight: bold;
+	}
+	.branching-point-label {
+		font-style:normal;
+		font-size:12px;
+		font-weight:normal;
+		line-height:0%;
+		font-family:serif;
+		letter-spacing:0px;
+		word-spacing:0px;
+		fill:#000000;
+		fill-opacity:1;
+		stroke:none
+	}
+	.branching-point-circle {
+		fill:#000000;
+		stroke-width:4;
+		stroke-miterlimit:4;
+		stroke-dasharray:none;
+		stroke-opacity:1;
+	}
+	.conductor-cross-section {
+		fill:none;
+		stroke-width:3;
+		stroke-linecap:butt;
+		stroke-linejoin:miter;
+		stroke-miterlimit:2;
+		stroke-dasharray:none;
+		stroke-opacity:1
+	}
+	.conductor-top, .conductor-top-bg {
+		stroke:#000000;
+		stroke-width:0.39687499;
+		stroke-miterlimit:4;
+		stroke-dasharray:none;
+		stroke-dashoffset:0;
+		stroke-opacity:1
+	}
+	.feedline-conductor-top {
+		fill:#004874;
+		fill-opacity:1;
+	}
+	.ground-conductor-top {
+		fill:#000000;
+		fill-opacity:0.50196078;
+	}
+	.resonator-conductor-top {
+		fill:#ffa000;
+		fill-opacity:1;
+	}
+	.connector-top {
+		fill:none;
+		stroke:#000000;
+		stroke-width:0.5291667;
+		stroke-linecap:butt;
+		stroke-linejoin:miter;
+		stroke-miterlimit:4;
+		stroke-dasharray:none;
+		stroke-opacity:1
+	}
+	.tl-schematic {
+		fill:none;
+		fill-opacity:1;
+		stroke:#000000;
+		stroke-width:0.52916664;
+		stroke-miterlimit:4;
+		stroke-dasharray:none;
+		stroke-dashoffset:0;
+		stroke-opacity:1
+	}
+	text {
+		line-height:1.25;
+		font-variant-ligatures:normal;
+		font-variant-caps:normal;
+		font-variant-numeric:normal;
+		font-feature-settings:normal;
+		text-align:start;
+		letter-spacing:0px;
+		word-spacing:0px;
+		writing-mode:lr-tb;
+		text-anchor:start;
+		fill:#000000;
+		fill-opacity:1;
+		stroke:none;
+		stroke-width:0.22679776
+	}
+	.schematic-label-italic {
+		font-style:italic;
+		font-variant:normal;
+		font-weight:normal;
+		font-stretch:normal;
+		font-size:7.25752831px;
+		font-family:'Times New Roman';
+		baseline-shift:baseline;
+		stroke-width:0.22679776
+	}
+	.schematic-label-index {
+		font-style:normal;
+		font-variant:normal;
+		font-weight:normal;
+		font-stretch:normal;
+		font-size:4.10050344px;
+		font-family:'Times New Roman';
+		baseline-shift:sub;
+		stroke-width:0.22679776
+	}
+	#menu-input, #menu-results {
+		display: block;
+	}
+	.menu {
+		font-size: 0.8em;
+		height: 50px;
+		position: relative;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		padding: 0;
+		font-weight: bold;
+		list-style: none;
+		text-transform: uppercase;
+	}/*
+	#menu-input li {
+		width: 25%;
+	}
+	#menu-results li {
+		width: 33.3%
+	}*/
+	.menu li {
+		color: #000000;
+		/*border: 1px solid #aaa;*/
+		text-decoration: none;
+		padding: 0 6px;
+		float: left;
+		box-sizing: border-box;
+		text-align: center;
+		font-weight: bold;
+		line-height: 30px;
+		background: #eeeeee;
+		position: relative;
+		cursor: pointer;
+	}
+	.menu li.active {
+		background: #a0a0d0;
+		cursor: default;
+	}
+	input {
+		width: 4em;
+	}
+	#results-pane, #input-pane {
+		min-width: 360px;
+		max-width: 800px;
+	}
+	#images {
+		float: left;
+		display: block;
+		max-width: 360px;
+	}
+	#C, #L {
+		display:block;
+		width: 100%;
+		overflow-x: auto;
+		overflow-y: auto;
+	}
+	#add-conductor, #rem-conductor {
+		width: 5em;
+	}
+	#Zt1_short, #Zt2_short, #Zt1_open, #Zt2_open {
+		width: 1em;
+	}
+	h1 {
+		font-size: 1em;
+		position: relative;
+		margin-top: 0em;
+		margin-bottom: 0em;
+		padding: 0em;
+		font-weight: bold;
+		list-style: none;
+		font-family: sans-serif;
+	}
+	 .minipane {
+		margin-bottom: 1em;
+		background: #ffffff;
+		border: 1px solid #aaa;
+	 }
+	 input.invalid {
+		background-color:#ffa0a0;
+	 }
+	.conductor-input {
+		position: relative; 
+		top:0.8em;
+	}
+	</style>
+</head>
+<body>
+	<script type="text/javascript" src="./CPW-resonator-coupling_files/numeric-1.2.6.min.js"></script>
+	<script type="text/javascript" src="./CPW-resonator-coupling_files/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./CPW-resonator-coupling_files/complex.min.js"></script>
+	<script type="text/javascript" src="./CPW-resonator-coupling_files/coplanar.js"></script>
+	<script>
+		function makeSVG(tag, attrs) {
+            var el= document.createElementNS('http://www.w3.org/2000/svg', tag);
+            for (var k in attrs)
+                el.setAttribute(k, attrs[k]);
+            return el;
+        }
+	
+		function effective_2x2_matrices(lc) {
+			C_effective = [[0, 0],[0, 0]]
+			$(".conductor-cross-section").each(function(_upper_full_ind) {
+				var upper = $(this);
+				if (upper.hasClass("A-conductor")) var upper_eff_ind = 0;
+				else if (upper.hasClass("B-conductor")) var upper_eff_ind = 1;
+				else return;
+				var upper_full_ind = _upper_full_ind;
+				$(".conductor-cross-section").each(function(lower_full_ind) {
+					var lower = $(this)
+					if (lower.hasClass("A-conductor")) var lower_eff_ind = 0;
+					else if (lower.hasClass("B-conductor")) var lower_eff_ind = 1;
+					else return;
+					C_effective[upper_eff_ind][lower_eff_ind] += lc[1][upper_full_ind-1][lower_full_ind-1];
+				});
+			});
+			// check if both A-type and B-type conductors are present
+			epsilon_mul = ($("#epsilon").val()*1.0+1.0)*0.5*8.854187817e-12;
+			mu_mul = ($("#mu").val()*1.0+1.0)*0.5*1.2566370614e-6;
+			if (C_effective[0][0] == 0) {
+				if (C_effective[1][1] == 0) return;
+				var L_effective = [[0, 0], [0, mu_mul*epsilon_mul/C_effective[1][1]]]; 
+				$('#impedance-data')[0].innerHTML = 'Effective characteristic impedance Z0:'+Math.sqrt(L_effective[1][1]/C_effective[1][1]); 
+				$('#resonator-results, #tl-schematic-parameters').hide(); }
+			else if (C_effective[1][1] == 0) {
+				var L_effective = [[mu_mul*epsilon_mul/C_effective[0][0], 0], [0, 0]];
+				$('#impedance-data')[0].innerHTML = 'Effective characteristic impedance Z0:'+Math.sqrt(L_effective[0][0]/C_effective[0][0]); 
+				$('#resonator-results, #tl-schematic-parameters').hide(); }
+			else {
+				var L_effective = numeric.mul(numeric.inv(numeric.div(C_effective, epsilon_mul)), mu_mul);
+				var impedance_data = impedance_data_2x2([L_effective, C_effective]);
+				$('#impedance-data')[0].innerHTML = 'Effective characteristic impedances: <br>Z0 (feedline): '+
+														parseFloat(impedance_data[0]).toFixed(3)+' Ohms, <br>Z0 (resonator): '+
+														parseFloat(impedance_data[1]).toFixed(3)+' Ohms, <br>κ: '+
+														parseFloat(impedance_data[2]).toFixed(4);
+				$("#resonances-tbody").children().each(function (index) {
+					var cells = $(this).find('td');
+					//console.log(cells);
+					// if n is an input, read the input
+					if ($(cells[0]).find('input').length)
+						n = $(cells[0]).find('input').val();
+					else
+						n = cells[0].textContent;
+					fc = window.coplanar.fc($("#l1").val()*1e-3, 
+									$("#l2").val()*1e-3, 
+									$("#lc").val()*1e-3, 
+									$('input[name=Zt1]:checked').val(), 
+									$('input[name=Zt2]:checked').val(),
+									impedance_data[0],
+									impedance_data[1],
+									$("#Zi").val(),
+									$('#Zo').val(),
+									$('#Zr').val(),
+									impedance_data[2],
+									n,
+									epsilon_mul,
+									mu_mul);
+					//console.log(fc, fc.re, fc.im)
+					f_GHz = fc.re*1e-9;
+					df_MHz = Math.abs(2*fc.im*1e-6);
+					decay_us = Math.abs(1.0/(2.0*Math.PI*fc.im)*1e6);
+					Q = f_GHz/df_MHz*1e3;
+					cells[1].textContent = parseFloat(f_GHz).toFixed(5);
+					cells[2].textContent = parseFloat(df_MHz).toFixed(2);
+					cells[3].textContent = parseFloat(decay_us).toFixed(3);
+					//console.log(Math.PI*n/impedance_data[2]**2, Math.sin(0.5*Math.PI*$("#lc").val()/($("#l1").val()*1.0+$("#l2").val()*1.0+$("#lc").val()*1.0)))
+					cells[4].textContent = parseFloat(Q).toFixed(0)
+				});
+				$('#resonator-results, #tl-schematic-parameters').show(); 
+			}
+			for (var i=0; i<2; i++)
+				for (var j=0; j<2; j++) {
+				//console.log($($("#L-body-effective")[0].rows[i].cells[j+1]));
+					$("#L-body-effective")[0].rows[i].cells[j+1].textContent =  parseFloat(L_effective[i][j]*1e9).toFixed(3);
+					$("#C-body-effective")[0].rows[i].cells[j+1].textContent = parseFloat(C_effective[i][j]*1e12).toFixed(3); }
+		}
+		function impedance_data_2x2(lc) {
+			var kappa = lc[0][0][1]/Math.sqrt(lc[0][0][0]*lc[0][1][1]);
+			var gamma = 1.0/Math.sqrt(1.0-kappa*kappa);
+			var Z1 = Math.sqrt(lc[0][0][0]/lc[1][0][0]);
+			var Z2 = Math.sqrt(lc[0][1][1]/lc[1][1][1]);
+			return [Z1, Z2, kappa];
+		}
+		function coordinate_updated() {
+			var conductor_gap_inputs = $(".conductor-gap-input");
+			var last_input = false;
+			$(".positionInput").each(function(index) { 
+				var input = $(this).val()*1.0;
+				if (index==0) {	last_input = input;	return; }
+				
+				if ( input<last_input) {
+					$(this).addClass('invalid');
+					invalid = true;
+					input = last_input;
+				}
+				else if ($(this).hasClass('invalid'))
+					$(this).removeClass('invalid');
+				
+				$(conductor_gap_inputs[index-1]).val(input-last_input);
+				
+				last_input = input;	
+			});
+			recalculate();
+		}
+		function conductor_gap_updated() {
+			var coordinate_inputs = $(".positionInput");
+			var invalid = false;
+			$(".conductor-gap-input").each(function(index) { 
+				var input = $(this).val()*1.0;
+				if (input<0 || !$.isNumeric(input)) {
+					$(this).addClass('invalid');
+					invalid = true;
+					input = 0;
+				} else if ($(this).hasClass('invalid'))
+					$(this).removeClass('invalid');
+				//console.log(coordinate_inputs[index], coordinate_inputs[index+1])
+				$(coordinate_inputs[index+1]).val($(coordinate_inputs[index]).val()*1.0 + input);
+			});
+			recalculate();
+		}
+		
+		function recalculate() {
+			var z_branch_points = [];
+			var conductor_names = [];
+			var last_conductor_name = "";
+			var invalid = false;
+			$(".positionInput").each(function(index) { 
+				if (!(index%2)&&index>0) { conductor_names.push(last_conductor_name+conductor_names.push($(this).name)); };
+				last_conductor_name = $(this).name;
+				var input = $(this).val()*1.0
+				if ( input<z_branch_points[z_branch_points.length-1] || !$.isNumeric(input)) {
+					$(this).addClass('invalid');
+					invalid = true;
+					input = z_branch_points[z_branch_points.length-1];
+				}
+				else if ($(this).hasClass('invalid'))
+					$(this).removeClass('invalid');
+				z_branch_points.push(input);
+			});
+			//if (invalid) return;
+			var epsilon_eff = ($("#epsilon").val()*1.0+1.0)*0.5;
+			var mu_eff = 2.0/(1.0/$("#mu").val()+1.0);
+			var ngc = $("#ngc").val();
+			var nng = $("#nng").val();
+			var lc = window.coplanar.LC(z_branch_points, ngc, nng, epsilon_eff, mu_eff, 'cpw');
+			//$(".result").each(function () { $( this ).empty(); });
+			for (var row_id = 0; row_id < lc.length; row_id++) {
+				$("#C-head>th").textContent = conductor_names[row_id];
+			}
+			var Crows = $("#C-body tr");
+			var Lrows = $("#L-body tr");
+			for (var column_id = 0; column_id < lc[0].length; column_id++) {
+				var Crow = Crows[column_id];
+				var Ccells = Crow.children;
+				var Lrow = Lrows[column_id];
+				var Lcells = Lrow.children;
+				for (var row_id = 0; row_id < lc[0][0].length; row_id++) {
+					Lcells[row_id].textContent = parseFloat((1e9*lc[0][column_id][row_id]).toFixed(3));
+					Ccells[row_id].textContent = parseFloat((1e12*lc[1][column_id][row_id]).toFixed(3));
+				}
+			}
+			effective_2x2_matrices(lc);
+			redraw();
+		}
+		function redraw() {
+			var last_conductor_name = "";
+			var conductor_names = [];
+			var z_branch_points = [];
+			var invalid = false;
+			$(".positionInput").each(function(index) { 
+				if (!(index%2)&&index>0) { conductor_names.push(last_conductor_name+conductor_names.push($(this).name)); };
+				last_conductor_name = $(this).name;
+				var input = $(this).val()*1.0
+				if ( input<z_branch_points[z_branch_points.length-1]) {
+					$(this).addClass('invalid');
+					invalid = true;
+					input = z_branch_points[z_branch_points.length-1];
+				}
+				else if ($(this).hasClass('invalid'))
+					$(this).removeClass('invalid');
+				z_branch_points.push(input);
+			});
+			var scale1 = 206.97067/(Math.max.apply(null, z_branch_points)-Math.min.apply(null, z_branch_points))*z_branch_points.length/(z_branch_points.length+2.0);
+			var offset1 = 206.97067/(z_branch_points.length+2.0);
+			var scale2 = 122.10522/(Math.max.apply(null, z_branch_points)-Math.min.apply(null, z_branch_points))*z_branch_points.length/(z_branch_points.length+2.0);
+			var offset2 = 122.10522/(z_branch_points.length+2.0);
+			//console.log(z_branch_points);
+			//console.log('Scale: '+scale);
+			//console.log((Math.max.apply(null, z_branch_points)-Math.min.apply(null, z_branch_points)))
+			var scaled1_coordinates = numeric.add(numeric.mul(numeric.sub(z_branch_points, Math.min.apply(null, z_branch_points)),scale1),offset1);
+			var scaled2_coordinates = numeric.add(numeric.mul(numeric.sub(z_branch_points, Math.min.apply(null, z_branch_points)),scale2),offset2);
+			
+			$('.conductor-cross-section').each(function(index) {
+				if (index*2-1<0) c1 = 0;
+				else c1 = scaled1_coordinates[index*2-1];
+					
+				if (index*2>=scaled1_coordinates.length) c2 = 206.97067;
+				else c2 = scaled1_coordinates[index*2];
+
+				$(this).attr('d', 'M '+c1+',1052.3622 H '+c2);
+			});
+			$('.branching-point-circle').each(function(index) { $(this).attr('cx', scaled1_coordinates[index]); });
+			$('.branching-point-label').each(function(index) { $(this).attr('x', scaled1_coordinates[index]-4.0); });
+			var feedline_bridge_xmin = 21.166667;
+			var feedline_bridge_xmax = 21.166667;
+			var resonator_bridge_xmin = 100.54167;
+			var resonator_bridge_xmax = 100.54167;
+			$('.conductor-top').each(function(index) {
+				var cid = $(this)[0].id.replace(/\D+/g, '');
+				/*				<path d="M 21.166667,201.75 H 68.791666" id="feedline-bridge1" class="connector-top feedline-circuit" />
+				<path d="M 21.166667,238.79167 H 68.791666" id="feedline-bridge2" class="connector-top feedline-circuit" />
+				<path d="M 100.54167,204.39583 H 52.916666" id="resonator-bridge1" class="connector-top resonator-circuit" />
+				<path d="M 52.916663,236.14585 H 100.54167" id="resonator-bridge2" class="connector-top resonator-circuit" />*/
+				
+				if ($(this).hasClass('feedline-conductor-top')) { 
+					y = 201.75002; v = 5.29166; 
+					if (feedline_bridge_xmin > (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5) feedline_bridge_xmin = (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5;
+					if (feedline_bridge_xmax < (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5) feedline_bridge_xmax = (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5;
+				}
+				else if ($(this).hasClass('resonator-conductor-top')) { 
+					y = 204.39583; v = 2.64584; 
+					if (resonator_bridge_xmin > (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5) resonator_bridge_xmin = (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5;
+					if (resonator_bridge_xmax < (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5) resonator_bridge_xmax = (scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5;
+				}
+				if ($(this).hasClass('feedline-conductor-top') || $(this).hasClass('resonator-conductor-top')) {
+					$('#cu'+cid).attr('d', 'm '+(scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5+','+y+' v '+v)
+					$('#cl'+cid).attr('d', 'm '+(scaled2_coordinates[index*2-1]+scaled2_coordinates[index*2])*0.5+',233.5 v '+v)
+				}
+				
+				if (index*2-1<0) c1 = 0;
+				else c1 = scaled2_coordinates[index*2-1];
+					
+				if (index*2>=scaled2_coordinates.length) c2 = 122.10522;
+				else c2 = scaled2_coordinates[index*2];
+
+				$(this).attr('x', c1);
+				$(this).attr('width', c2-c1);
+			});
+			$('#feedline-bridge1').attr('d', 'm '+feedline_bridge_xmin+',201.75    H '+(feedline_bridge_xmax));
+			$('#feedline-bridge2').attr('d', 'm '+feedline_bridge_xmin+',238.79167 H '+(feedline_bridge_xmax));
+			$('#resonator-bridge1').attr('d', 'm '+resonator_bridge_xmin+',204.39583 H '+(resonator_bridge_xmax));
+			$('#resonator-bridge2').attr('d', 'm '+resonator_bridge_xmin+',236.14585 H '+(resonator_bridge_xmax));
+			if ($('.feedline-conductor-top').length) $('.feedline-circuit').show();
+			else $('.feedline-circuit').hide();
+			if ($('.resonator-conductor-top').length) $('.resonator-circuit').show();
+			else $('.resonator-circuit').hide();
+		}
+		
+		function add_conductor() {
+			// add a new row to the branching point table and a new point to the svg
+			var svg_layer = $("#conformal-cross-section");
+			var branching_point_positions = []
+			var num_conductors = $("#branching-points-elements>tr").length-1;
+			var last_value = $('#branching-points-elements tr:last td:last input').val()*1.0;
+			var num_bp = $("#branching-points-elements>tr").length*2;
+			var last_cg_row = $("#conductor-gap-widths-elements>tr:last")[0];
+			var new_cg_row = $("#conductor-gap-widths-elements")[0].insertRow(-1);
+			var new_bp_row = $("#branching-points-elements")[0].insertRow(-1);
+			
+			for (var new_branching_point_id = 0; new_branching_point_id < 2; new_branching_point_id++) {
+				last_bp_name = String.fromCharCode('A'.charCodeAt(0)+num_bp+new_branching_point_id-1);
+				new_bp_name = String.fromCharCode('A'.charCodeAt(0)+num_bp+new_branching_point_id);
+				new_bp_row.insertCell(-1).textContent = new_bp_name;
+				// insert two cells into branching point edit table
+				var bppos = (last_value*1.0+new_branching_point_id*1.0+1.0);
+				$(new_bp_row.insertCell(-1)).append('<input type="text" name="' + new_bp_name + '" value="'+bppos+'" class="positionInput">');
+				$(new_bp_row).find('input').keyup(coordinate_updated);
+				
+				// insert two cells into conductor-gap-width table
+				var cg_row = new_cg_row;
+				var c = "gap-input";
+				var width = 1.0;
+				if (!new_branching_point_id) {
+					cg_row = last_cg_row;
+					c = "conductor-input";
+				} 
+				var cl = cg_row.insertCell(-1);
+				$(cl).addClass(c);
+				cl.textContent = last_bp_name+new_bp_name;
+				cl = cg_row.insertCell(-1);
+				$(cl).addClass(c);
+				$(cl).append('<input type="text" name="' + last_bp_name+new_bp_name + '" value="'+width+'" class="conductor-gap-input">');
+				$(cl).find('input').keyup(conductor_gap_updated);
+				
+				if (new_branching_point_id) var color='#006400';
+				else var color='#9b0000';
+				$(".branching-point-circle").last().after(makeSVG('circle', {id: ("circle_"+new_bp_name), cx: bppos*100.0, cy: 1052, r:0.5, stroke: color, 
+												'stroke-width': 2, 'fill': 'red', 'stroke-miterlimit':2, 'stroke-dasharray':null, 'stroke-opacity':1, 'class':'branching-point-circle'}));
+				var label = makeSVG('text', {'xml:space':'preserve', id: ("label_"+new_bp_name), x: bppos*100.0, y: 1044.0284, 'class':'branching-point-label'});
+				$(label).text(new_bp_name);
+				$(".branching-point-label").last().after(label);
+				branching_point_positions.push(bppos);
+			}
+			// add a new conductor to the x axis
+			$(".conductor-cross-section").last().removeClass("immutable-conductor");
+			$(".conductor-cross-section").last().addClass("mutable-conductor");
+			var new_conductor_path = makeSVG('path', {'fill':null, 'stroke':'#004874', 'stroke-width':3, 'stroke-linecap':'butt', 'stroke-linejoin':'miter', 
+												'stroke-miterlimit':4, 'stroke-dasharray':null, 'stroke-opacity':1, 
+												d:'M '+branching_point_positions[0]*100.+',1052.3622 H '+(branching_point_positions[1]-branching_point_positions[0])*100.0, 'id':'csc'+(num_conductors+2),
+												'class': 'conductor-cross-section ground-conductor immutable-conductor'});
+			$(new_conductor_path).click(toggle_conductor_class);
+			$(".conductor-cross-section").last().after(new_conductor_path);
+			
+			//<rect id="tс2" class="ground-conductor-top conductor-top" width="20.35087" height="26.458349" x="101.75435" y="207.04166" />
+			
+			var new_conductor_top = makeSVG('rect', {'id':'tc'+(num_conductors+2), 'class':"ground-conductor-top conductor-top", 'width':20.35087, 'height':26.458349, 'x':101.75435, 'y':207.04166 });
+			$(new_conductor_top).click(toggle_conductor_class);
+			$(".conductor-top").last().after(new_conductor_top);
+			//<path class="connector-top" d="m 61.05261,201.75002 v 5.29166" id="cu1" />
+			//<path class="connector-top" d="m 61.05261,233.50002 v 5.29166" id="cl1" />
+			//d="m 52.916666,233.5 v 2.64583"
+			//d="m 52.916666,204.39583 10e-7,2.64584"
+			var new_upper_connector = makeSVG('path', {'class':'connector-top', 'd':"m 61.05261,201.75 v 5.29166", 'id':'cu'+(num_conductors+2)});
+			var new_lower_connector = makeSVG('path', {'class':'connector-top', 'd':"m 61.05261,233.50 v 5.29166", 'id':'cl'+(num_conductors+2)});
+			$(new_lower_connector).hide();
+			$(new_upper_connector).hide();
+			$(".connector-top").last().after(new_upper_connector);
+			$(".connector-top").last().after(new_lower_connector);
+			
+			// add a new row to the resulting capacitance matrix
+			var new_row = $("#C-body")[0].insertRow(-1);
+			var Crows = $("#C-body>tr");
+			var new_num_conductors = Crows.length;
+			$("#C-head>tr").append('<th>'+String.fromCharCode('A'.charCodeAt(0)+new_num_conductors*2-1)+String.fromCharCode('A'.charCodeAt(0)+new_num_conductors*2)+'</th>');
+			for (var row_id = 0; row_id < new_num_conductors; row_id++) {
+				Crows[row_id].insertCell(-1);
+				if (row_id+1<new_num_conductors) 
+					new_row.insertCell(-1);
+			}
+			// add a new row to the resulting inductance matrix
+			var new_row = $("#L-body")[0].insertRow(-1);
+			var Lrows = $("#L-body>tr");
+			$("#L-head>tr").append('<th>'+String.fromCharCode('A'.charCodeAt(0)+new_num_conductors*2-1)+String.fromCharCode('A'.charCodeAt(0)+new_num_conductors*2)+'</th>');
+			for (var row_id = 0; row_id < new_num_conductors; row_id++) {
+				Lrows[row_id].insertCell(-1);
+				if (row_id+1<new_num_conductors) 
+					new_row.insertCell(-1);
+			}
+			recalculate();
+
+		}
+		
+		function rem_conductor() {
+			if ($("#C-body>tr").length <=1) return;
+			// remove two last rows from the branching point table
+			$('#branching-points-elements tr:last').remove();
+			
+			$('#conductor-gap-widths-elements tr:last').remove();
+			$('#conductor-gap-widths-elements tr:last td:last').remove();
+			$('#conductor-gap-widths-elements tr:last td:last').remove();
+			//$('#branching-points-elements tr:last').remove();
+			// remove last column from C table
+			
+			$("#C-head>tr th:last").remove()
+			$("#C-body>tr").each(function (index) { 
+			//console.log(index);
+				$(this).find('td').last().remove(); 
+				});
+			$("#C-body tr:last").remove()
+			// remove last column from L table
+			$("#L-head>tr th:last").remove()
+			$("#L-body>tr").each(function (index) { 
+			//console.log(index);
+				$(this).find('td').last().remove(); 
+				});
+			$("#L-body tr:last").remove();
+			
+			$('.branching-point-circle').last().remove();
+			$('.branching-point-circle').last().remove();
+			$('.branching-point-label').last().remove();
+			$('.branching-point-label').last().remove();
+			$('.conductor-cross-section').last().remove();
+			$('.conductor-cross-section').last().removeClass("mutable-conductor");
+			$('.conductor-cross-section').last().addClass("immutable-conductor");
+			var cid = $(".conductor-top").last()[0].id.replace(/\D+/g, '');
+			$("#cu"+cid).remove();
+			$("#cl"+cid).remove();
+			$(".conductor-top").last().remove();
+			var cid = $(".conductor-top").last()[0].id.replace(/\D+/g, '');
+			$("#cu"+cid).hide();
+			$("#cl"+cid).hide();
+			if (!$('.conductor-cross-section').last().hasClass("ground-conductor"))
+				$('.conductor-cross-section').last().addClass("ground-conductor");
+				$(".conductor-top").last().addClass("ground-conductor-top");
+			if ($('.conductor-cross-section').last().hasClass("A-conductor"))
+				$('.conductor-cross-section').last().removeClass("A-conductor");
+				$(".conductor-top").last().removeClass("feedline-conductor-top");
+			if ($('.conductor-cross-section').last().hasClass("B-conductor"))
+				$('.conductor-cross-section').last().removeClass("B-conductor");
+				$(".conductor-top").last().removeClass("resonator-conductor-top");
+			recalculate();
+			redraw();
+		}
+		
+		function toggle_conductor_class (event) {
+				var cid = event.target.id.replace(/\D+/g, '');
+				var csc = $('#csc'+cid);
+				var tc = $('#tc'+cid);
+				var cu = $('#cu'+cid);
+				var cl = $('#cl'+cid);
+				//console.log(csc, tc, '#csc'+cid, '#tc'+cid);
+				//d="m 52.916666,233.5 v 2.64583"
+				//d="m 61.05261,233.5 v 5.29166"
+				if (csc.hasClass("immutable-conductor")) return;
+				if (csc.hasClass("ground-conductor")) {
+					csc.removeClass("ground-conductor");
+					csc.addClass("A-conductor");
+					tc.removeClass("ground-conductor-top");
+					tc.addClass("feedline-conductor-top");
+					cu.show();
+					cl.show();
+				} else if (csc.hasClass("A-conductor")) {
+					csc.removeClass("A-conductor");
+					csc.addClass("B-conductor");
+					tc.removeClass("feedline-conductor-top");
+					tc.addClass("resonator-conductor-top");
+				} else if (csc.hasClass("B-conductor")) {
+					csc.removeClass("B-conductor");
+					csc.addClass("ground-conductor");
+					tc.removeClass("resonator-conductor-top");
+					tc.addClass("ground-conductor-top");
+					cu.hide();
+					cl.hide();
+				}; 
+				recalculate();
+			}
+		
+		$(document).ready(function() {
+			$(".positionInput").keyup(coordinate_updated)
+			$(".conductor-gap-input").keyup(conductor_gap_updated)
+			$(".HEInput").keyup(recalculate); 
+			$(".HEInputClick").click(recalculate); 
+			$("#add-conductor").click(add_conductor);
+			$("#rem-conductor").click(rem_conductor);
+			
+			$(".conductor-cross-section").click(toggle_conductor_class);
+			$(".conductor-top").click(toggle_conductor_class);
+			$("#cu2").hide();
+			$("#cl2").hide();
+			recalculate();
+		});
+	</script>
+	<div style="display:block;">
+	This tool allows to caluclate the quality factor and first-order frequency corrections to coplanar waveguide (CPW) resonators coupled to a CPW transmission line.<br>
+	If you are interested in how this works or wish to refer to this webpage, see the article "Quality factor of a transmission line coupled coplanar waveguide resonator"<br>
+	cite as: Besedin, I. &amp; Menushenkov, A.P. EPJ Quantum Technol. (2018) 5: 2. <a href="https://doi.org/10.1140/epjqt/s40507-018-0066-3">https://doi.org/10.1140/epjqt/s40507-018-0066-3</a>
+	(arxiv preprint: <a href="https://arxiv.org/abs/1710.01998">arXiv:1710.01998</a>).<br>
+	The actual implementation used here is based on <a href="./CPW-resonator-coupling_files/coplanar.js">javascript</a>, complatible with node.js and web browsers. You can download this webpage and use it offline.<br>
+	Alternatively, you can use a python implementation <a href="https://github.com/ooovector/cpw_coupling">available on github</a>.<br>
+	For a short tutorial on how to use this page, visit <a href="https://www.youtube.com/watch?v=eQssX1e0TSU&amp;lc=z22myxzjhkadt5vcjacdp430hhbx1cxnizqjr0ntbvpw03c010c">youtube</a>.<br>
+	(c) Ilya Besedin, 2018. Creative Commons Attribution-NonCommercial-ShareAlike <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">terms</a> apply. Other licensing options are available upon request.<br>
+	<b>Estimates done with this tool are usually slightly higher than true quality factors due to spurious couplings.</b><br><br>
+	<div id="images">
+		<div id="coupler-cross-section-image">
+			<h1>Conductor geometry (view)</h1>
+			<div style="display:block; width: 100%">
+			This is a cross-section and top down view of the coplanar coupler. 
+			The geometry is defined by "branching points" (red and green).
+			Each conductor is either "ground" (gray), "feedline" (blue) or "resonator" (yellow).
+			Click a conductor on the image to toggle its class.
+			</div>
+			<svg width="100%" height="200" id="svg2" version="1.1" viewBox="0 0 206.97067 61.970681">
+				<defs id="defs4">
+					<lineargradient id="linearGradient4945">
+						<stop style="stop-color:#960000;stop-opacity:1;" offset="0" id="stop4947"></stop>
+						<stop style="stop-color:#960000;stop-opacity:0;" offset="1" id="stop4949"></stop>
+					</lineargradient>
+					<marker orient="auto" refY="0" refX="0" id="Arrow1Mend" style="overflow:visible">
+						<path id="path4132" d="M 0,0 5,-5 -12.5,0 5,5 Z" style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0000000pt" transform="matrix(-0.4,0,0,-0.4,-4,0)"></path>
+					</marker>
+					<radialgradient xlink:href="#linearGradient4945" id="radialGradient4955" cx="100" cy="852.98718" fx="100" fy="852.98718" r="97.5" gradientTransform="matrix(0,0.56410251,-1.2307693,0,1149.8304,970.95194)" gradientUnits="userSpaceOnUse"></radialgradient>
+				</defs>
+				<g id="conformal-cross-section" transform="translate(0,-1020.3915)">
+					<rect style="fill:url(#radialGradient4955);fill-opacity:1;stroke:none" id="rect4943" width="206.97067" height="30" x="0" y="1052.3622"></rect>
+					<path d="M 0,1052.3622 H 34.495111666666666" id="csc0" class="conductor-cross-section ground-conductor immutable-conductor"></path>
+					<path d="M 68.99022333333333,1052.3622 H 137.98044666666667" id="csc1" class="conductor-cross-section A-conductor mutable-conductor"></path>
+					<path d="M 172.47555833333334,1052.3622 H 206.97067" id="csc2" class="conductor-cross-section ground-conductor immutable-conductor"></path>
+					<circle id="circle_A" style="stroke:#9b0000;" cx="34.495111666666666" cy="1052.3622" r="0.5" class="branching-point-circle"></circle>
+					<circle id="circle_B" style="stroke:#006400;" cx="68.99022333333333" cy="1052.3622" r="0.5" class="branching-point-circle"></circle>
+					<circle id="circle_C" style="stroke:#9b0000;" cx="137.98044666666667" cy="1052.3622" r="0.5" class="branching-point-circle"></circle>
+					<circle id="circle_D" style="stroke:#006400;" cx="172.47555833333334" cy="1052.3622" r="0.5" class="branching-point-circle"></circle>
+					<text xml:space="preserve" x="30.495111666666666" y="1044.0284" id="label_A" class="branching-point-label">A</text>
+					<text xml:space="preserve" x="64.99022333333333" y="1044.0284" id="label_B" class="branching-point-label">B</text>
+					<text xml:space="preserve" x="133.98044666666667" y="1044.0284" id="label_C" class="branching-point-label">C</text>
+					<text xml:space="preserve" x="168.47555833333334" y="1044.0284" id="label_D" class="branching-point-label">D</text>
+				</g>
+			</svg>
+		</div>
+		<div id="coupler-top-image">
+			<div style="align:center; display:block; width:100%"></div>
+			<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 122.10522 101.61252" version="1.1" id="svg4918">
+			  <g id="layer1" transform="translate(0.19843781,-169.19373)">
+				<rect style="fill:#004874;fill-opacity:0.28627451" class="conductor-top-bg" id="bg" width="121.70834" height="26.458328" x="-3.1789145e-007" y="207.04167"></rect>
+				<rect id="tс0" class="ground-conductor-top conductor-top" width="20.35087" height="26.458334" x="0" y="207.04167"></rect>
+				<rect id="tc1" class="feedline-conductor-top conductor-top" width="40.70174" height="26.458334" x="40.70174" y="207.04167"></rect>
+				<rect id="tc2" class="ground-conductor-top conductor-top" width="20.35087" height="26.458349" x="101.75435" y="207.04166"></rect>
+				<path d="M 21.166667,181.12502 V 201.75" id="feedline-Zo" class="connector-top feedline-circuit"></path>
+				<path d="m 21.166667,238.79167 v 20.62498" id="feedline-Zi" class="connector-top feedline-circuit"></path>
+				<path d="m 21.166667,201.75    H 61.05261" id="feedline-bridge1" class="connector-top feedline-circuit"></path>
+				<path d="m 21.166667,238.79167 H 61.05261" id="feedline-bridge2" class="connector-top feedline-circuit"></path>
+				<path d="m 100.54167,204.39583 H 100.54167" id="resonator-bridge1" class="connector-top resonator-circuit" style="display: none;"></path>
+				<path d="m 100.54167,236.14585 H 100.54167" id="resonator-bridge2" class="connector-top resonator-circuit" style="display: none;"></path>
+				<path d="m 100.54167,204.39585 v -5.29167" id="resonator-tl1" class="connector-top resonator-circuit" style="display: none;"></path>
+				<path d="m 100.54167,241.43752 v -5.29167" id="resonator-tl2" class="connector-top resonator-circuit" style="display: none;"></path>
+				<rect class="tl-schematic resonator-circuit" id="tl1" width="5.2916641" height="15.875008" x="97.895836" y="183.22917" style="display: none;"></rect>
+				<rect class="tl-schematic resonator-circuit" y="-257.3125" x="97.895836" height="15.874987" width="5.2916641" id="tl2" transform="scale(1,-1)" style="display: none;"></rect>
+				<text class="resonator-circuit" xml:space="preserve" x="84.29071" y="193.97079" id="TL1-desc" style="display: none;"><tspan id="tspan5741" x="84.29071" y="193.97079" class="schematic-label-italic">l<tspan id="tspan45682" class="schematic-label-index">1</tspan>,Z<tspan class="schematic-label-index" id="tspan5765">r</tspan></tspan></text>
+				<text class="resonator-circuit" id="TL2-desc" y="250.28925" x="84.29071" xml:space="preserve" style="display: none;"><tspan class="schematic-label-italic" y="250.28925" x="84.29071" id="tspan5779">l<tspan id="tspan45681" class="schematic-label-index">2</tspan>,Z<tspan id="tspan5777" class="schematic-label-index">r</tspan></tspan></text>
+				<path class="feedline-circuit tl-schematic" id="pzo" d="m 21.166667,181.12502 -6.375044,-5.83335 v -5.83336 H 27.78125 v 5.83336 l -6.614583,5.83335"></path>
+				<text class="feedline-circuit" id="Zo-desc" y="175.68506" x="18.154959" xml:space="preserve"><tspan class="schematic-label-italic" y="175.68506" x="18.154959" id="tspan4566">Z<tspan id="tspan4578" class="schematic-label-index">o</tspan></tspan></text>
+				<path class="feedline-circuit tl-schematic" id="pzi" d="m 21.166667,258.87497 -6.375044,5.83335 v 5.83336 H 27.78125 v -5.83336 l -6.614583,-5.83335"></path>
+				<text class="feedline-circuit" id="Zi-desc" y="267.8653" x="18.154959" xml:space="preserve"><tspan class="schematic-label-italic" y="267.8653" x="18.154959" id="tspan4570">Z<tspan id="tspan4568" class="schematic-label-index">i</tspan></tspan></text>
+				<g class="resonator-circuit" id="pzt1" style="display: none;">
+					<path class="tl-schematic" d="m 100.54167,181.12502 -6.375043,-5.83335 v -5.83336 h 12.989633 v 5.83336 l -6.61459,5.83335" id="path4574"></path>
+					<path id="path4576" d="m 100.54167,181.11251 v 2.11666" class="tl-schematic"></path>
+				</g>
+				<g class="resonator-circuit" id="pzt2" transform="matrix(1,0,0,-1,0,439.99999)" style="display: none;">
+					<path id="path4582" d="m 100.54167,181.12502 -6.375043,-5.83335 v -5.83336 h 12.989633 v 5.83336 l -6.61459,5.83335" class="tl-schematic"></path>
+					<path class="tl-schematic" d="m 100.54167,181.11251 0,1.57497" id="path4584"></path>
+				</g>
+				<text class="resonator-circuit" id="Zt1-desc" y="175.68506" x="96.396027" xml:space="preserve" style="display: none;"><tspan class="schematic-label-italic" y="175.68506" x="96.396027" id="tspan4590">Z<tspan id="tspan4588" class="schematic-label-index">t1</tspan></tspan></text>
+				<text class="resonator-circuit" xml:space="preserve" x="96.396027" y="268.01151" id="Zt2-desc" style="display: none;"><tspan id="tspan4596" x="96.396027" y="268.01151" class="schematic-label-italic">Z<tspan class="schematic-label-index" id="tspan4594">t2</tspan></tspan></text>
+				<path class="connector-top" d="m 61.05261,201.75002 v 5.29166" id="cu1"></path>
+				<path class="connector-top" d="m 61.05261,233.5 v 5.29166" id="cl1"></path>
+				<path class="connector-top" d="m 61.05261,201.75002 v 5.29166" id="cu2" style="display: none;"></path>
+				<path class="connector-top" d="m 61.05261,233.50002 v 5.29166" id="cl2" style="display: none;"></path>
+			  </g>
+			</svg><br>
+		</div>
+	</div>
+	<div id="input-pane" style="width: 500; display: block; float: left; margin: 0.5em; padding: 0.5em">
+		<div id="branching-point-pane" class="minipane">
+			<h1>Conductor geometry (edit)</h1>
+			<div style="display:block; width:100%"></div>
+			<input class="HEInput" type="button" id="add-conductor" value="add">
+			<input class="HEInput" type="button" id="rem-conductor" value="remove">
+			
+			<div id="branching-point-coordinate-input" style="display:none">
+			<div>Define geometry by "branching point" coordinates</div>
+				<table id="branching-points">
+					<thead>
+						<tr><th>Name</th>
+						<th>Position</th>
+						<th>Name</th>
+						<th>Position</th>
+					</tr></thead>
+					<tbody id="branching-points-elements">
+						<tr>
+							<td>A</td>
+							<td><input type="text" name="A" value="-2" class="positionInput"></td>
+							<td>B</td>
+							<td><input type="text" name="B" value="-1" class="positionInput"></td>
+						</tr>
+						<tr>
+							<td>C</td>
+							<td><input type="text" name="C" value="1" class="positionInput"></td>
+							<td>D</td>
+							<td><input type="text" name="D" value="2" class="positionInput"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="branching-point-width-input" style="display:inline">
+				<div>Enter gap and conductor widths in any units: μm, nm, mils, ...</div>
+				<table id="conductor-gap-widths-elements">
+					<thead>
+						<tr><th></th>
+						<th>Gap</th>
+						<th></th>
+						<th>Conductor</th>
+					</tr></thead>
+					<tbody id="conductor-gap-widths-elements">
+						<tr>
+							<td class="gap-input">AB</td>
+							<td class="gap-input"><input type="text" name="AB" value="1" class="conductor-gap-input"></td>
+							<td class="conductor-input">BC</td>
+							<td class="conductor-input"><input type="text" name="BC" value="1" class="conductor-gap-input"></td>
+						</tr>
+						<tr>
+							<td>CD</td>
+							<td><input type="text" name="CD" value="2" class="conductor-gap-input"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--<div id="menu-input">
+			<ul class="menu">
+				<li id="menu-input-precision" class="active">Precision</li>
+				<li id="menu-input-substrate">Substrate</li>
+				<li id="menu-input-cross-section">Coupler</li>
+				<li id="menu-input-tl">Terminations</li>
+			</ul>
+		</div>-->
+		<div id="material-precision-pane" class="minipane">
+			<h1>Material properties</h1>
+			<div style="display:block; width:100%">The upper half-plane is vacuum (ε=1, μ=1).</div>
+			<div id="epsilon-pane">Substrate permittivity (ε):<br>
+			<input class="HEInput" type="text" id="epsilon" name="epsilon" value="11.75"></div>
+			<div id="mu-pane">Substrate permeability (μ): <br>
+			<input class="HEInput" type="text" id="mu" name="mu" value="1"></div>
+		</div>
+		<div id="gc-precision-pane" class="minipane">
+			<h1>Calculation precision</h1>
+			<div style="display:block; width:100%">The higher the numbers, the higher the precision.</div>
+			<div id="gcn-pane">Gauss-Chebyshev quadrature order:<br> 
+			<input class="HEInput" type="text" id="ngc" name="ngc" value="24"></div>
+			<div id="gnn-pane">Gauss-Newton iterations:<br> 
+			<input class="HEInput" type="text" id="nng" name="nng" value="12"></div>
+		</div>
+
+		<div id="tl-schematic-parameters" class="minipane" style="display: none;">
+			<h1>Impedances, Ohms</h1>
+			<div style="display:block; width:100%">Termination impedances affect the quality factor of the coupled resonator. <br>Complex impedances are supported (for example '50+50i').</div>
+			<table>
+				<thead>
+						<tr><th>Zo</th>
+						<th>Zi</th>
+						<th>Zr</th>
+						<th>Zt1</th>
+						<th>Zt2</th>
+				</tr></thead>
+				<tbody>
+					<tr>
+						<td><input type="text" name="Zo" id="Zo" value="50" class="HEInput"></td>
+						<td><input type="text" name="Zi" id="Zi" value="50" class="HEInput"></td>
+						<td><input type="text" name="Zr" id="Zr" value="50" class="HEInput"></td>
+						<td><input type="radio" name="Zt1" value="short" id="Zt1_short" class="HEInputClick"><label for="Zt1_short" class="HEInputClick">short</label><br>
+			<input type="radio" name="Zt1" value="open" id="Zt1_open" class="HEInputClick"><label for="Zt1_open" class="HEInput">open</label></td>
+						<td><input type="radio" name="Zt2" value="short" id="Zt2_short" class="HEInputClick"><label for="Zt2_short" class="HEInputClick">short</label><br>
+			<input type="radio" name="Zt2" value="open" id="Zt2_open" class="HEInputClick"><label for="Zt2_open" class="HEInputClick">open</label></td>
+					</tr>
+				</tbody>
+			</table><!--
+			Zo, Ohms: <input type="text" name="Zo" id="Zo" value="50" class="HEInput" ><br>
+			Zi, Ohms: <input type="text" name="Zi" id="Zi" value="50" class="HEInput" ><br>
+			Zt1: <input type="radio" name="Zt1" value="short" id="Zt1_short" class="HEInputClick"><label for="Zt1_short" class="HEInputClick">short</label>
+			<input type="radio" name="Zt1" value="open" id="Zt1_open" class="HEInputClick"><label for="Zt1_open" class="HEInput">open</label><br>
+			Zt2: <input type="radio" name="Zt2" value="short" id="Zt2_short" class="HEInputClick"><label for="Zt2_short" class="HEInputClick">short</label>
+			<input type="radio" name="Zt2" value="open" id="Zt2_open" class="HEInputClick"><label for="Zt2_open" class="HEInputClick">open</label><br>
+			TL1, TL2 section impedances, Ohms: <input type="text" name="Zr" id="Zr" value="50" class="HEInput" >-->
+			<h1>Section lengths, mm</h1>
+			<table>
+				<thead>
+						<tr><th>Coupler</th>
+						<th>l1</th>
+						<th>l2</th>
+				</tr></thead>
+				<tbody>
+					<tr>
+						<td><input type="text" name="lc" id="lc" value="0.4" class="HEInput"></td>
+						<td><input type="text" name="l1" id="l1" value="1.0" class="HEInput"></td>
+						<td><input type="text" name="l2" id="l2" value="3.6" class="HEInput"></td>
+					</tr>
+				</tbody>
+			</table>
+			<!--Coupler length, mm: <input type="text" name="lc" id="lc" value="4" class="HEInput" ><br>
+			TL1 section length (l1), mm: <input type="text" name="l1" id="l1" value="1" class="HEInput" ><br>
+			TL2 section length (l2), mm: <input type="text" name="l2" id="l2" value="3.6" class="HEInput" ><br>-->
+		</div>
+	</div>
+	<div id="results-pane" style="width: 500; display: block; float: left;  margin: 0.5em; padding: 0.5em">
+		<!--<div id="menu-results">
+			<ul class="menu">
+				<li id="menu-results-full-lc" class="active">Full LC</li>
+				<li id="menu-results-substrate">Effective 2-conductor</li>
+				<li id="menu-results">Resonances</li>
+			</ul>
+		</div>-->
+		<div id="results-short-pane" class="minipane">
+			<div id="inductance-short-results">
+				<h1>Per-unit-length effective inductance, nH/m:</h1>
+				<table id="L-effective">
+					<thead id="L-head-effective" class="result">
+						<tr> <th></th> <th class="A-conductor-text">Feedline</th> <th class="B-conductor-text">Resonator</th> </tr>
+					</thead>
+					<tbody id="L-body-effective" class="result">
+						<tr> <td class="A-conductor-text">Feedline</td> <td>401.892</td> <td>0.000</td> </tr>
+						<tr> <td class="B-conductor-text">Resonator</td> <td>0.000</td> <td>0.000</td> </tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="capacitance-short-results">
+				<h1>Per-unit-length effective capacitance, pF/m:</h1>
+				<div style="display:block; width:100%">These value can be used to estimate the capacitance of interdigital capacitors.</div>
+				<table id="C-effective">
+					<thead id="C-head-effective" class="result">
+						<tr> <th></th> <th class="A-conductor-text">Feedline</th> <th class="B-conductor-text">Resonator</th> </tr>
+					</thead>
+					<tbody id="C-body-effective" class="result">
+						<tr> <td class="A-conductor-text">Feedline</td> <td>176.494</td> <td>0.000</td> </tr>
+						<tr> <td class="B-conductor-text">Resonator</td> <td>0.000</td> <td>0.000</td> </tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="impedance-data">Effective characteristic impedance Z0:47.718835279040505</div>
+		</div>
+		<div id="results-full-pane" class="minipane">
+			<div id="inductance-results">
+				<h1>Full per-unit-length inductance, nH/m:</h1>
+				<table id="L">
+					<thead id="L-head" class="result">
+						<tr>
+							<th>BC</th>
+						</tr>
+					</thead>
+					<tbody id="L-body" class="result">
+						<tr>
+							<td>401.892</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="capacitance-results">
+				<h1>Full per-unit-length capacitance, pF/m:</h1>
+				<table id="C">
+					<thead id="C-head" class="result">
+						<tr>
+							<th>BC</th>
+						</tr>
+					</thead>
+					<tbody id="C-body" class="result">
+						<tr>
+							<td>176.494</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="resonator-results" class="minipane" style="display: none;">
+			<h1>Resonances</h1>
+			<div style="display:block; width:100%">First-order corrected resonance frequencies in the "resonator" (yellow) conductors and TLs 1 and 2.</div>
+			
+			<table id="resonances">
+				<thead>
+					<tr><th>n</th>
+					<th>Frequency, GHz</th>
+					<th>Linewidth, MHz</th>
+					<th>Decay time, μs</th>
+					<th>Quality factor</th>
+				</tr></thead>
+				<tbody id="resonances-tbody">
+					<tr>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="resonance_id" value="5"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<br>
+
+</div></body></html>
